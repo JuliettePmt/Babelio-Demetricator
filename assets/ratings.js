@@ -15,6 +15,7 @@ export function ratings() {
         const element = ratingArray[i];
         if (element) {
             element.setAttribute("style", "display: none !important; visibility: hidden !important;");
+            element.classList.add("hidden-by-script");
         }
     }
     
