@@ -1,6 +1,6 @@
-import { ratings } from "./assets/ratings.js";
-import { community } from "./assets/community.js";
-import { commercial } from "./assets/commercial.js";
+import { ratings } from "./assets/assets/book_page/ratings.js";
+import { community } from "./assets/assets/book_page/community.js";
+import { commercial } from "./assets/assets/book_page/commercial.js";
 
 
 ratings();

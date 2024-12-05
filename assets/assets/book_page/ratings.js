@@ -36,14 +36,18 @@ export function ratings() {
 
 //******** UNIQUE ELEMENTS ********
     // Top part of book page (beside metadata)
-    const ratingValue = document.querySelector("#page_corps > div > div:nth-child(3) > div.side_l > div.livre_con > div.col.col-8 > span:nth-child(5) > span.texte_t2.rating")
+    const ratingValue = document.querySelector("#page_corps > div > div:nth-child(3) > div.side_l > div.livre_con > div.col.col-8 > span")
+    const ratingValueV2 = document.querySelector("#page_corps > div > div:nth-child(3) > div.side_l > div.livre_con > div.col.col-8 > span:nth-child(3)")
     if (ratingValue) ratingArray.push(ratingValue);
+    if (ratingValueV2) ratingArray.push(ratingValueV2);
 
     const ratingStars = document.querySelector("#page_corps > div > div:nth-child(3) > div.side_l > div.livre_con > div.col.col-8 > div.rateit.rateit-font")
     if (ratingStars) ratingArray.push(ratingStars);
 
     const ratingScale = document.querySelector("#page_corps > div > div:nth-child(3) > div.side_l > div.livre_con > div.col.col-8 > span:nth-child(5)")
     if (ratingScale) ratingArray.push(ratingScale);
+
+    
 
 
     // Bottom part of book page (just before critics)
