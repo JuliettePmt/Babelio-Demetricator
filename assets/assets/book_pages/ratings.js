@@ -26,6 +26,7 @@ export function ratings() {
 
     // Community ratings (stars before critics)
     const communityRatings = document.querySelectorAll ("span > div.entete_critique > div.entete_login > div")
+    const textNoter = document.querySelector("#page_corps > div > div:nth-child(3) > div.side_l > div.livre_con > div.col.col-8 > table > tbody > tr > td:nth-child(1) > nobr")
 
     if (communityRatings) {
         communityRatings.forEach(communityRating => {
@@ -33,6 +34,11 @@ export function ratings() {
             communityRating.classList.add("processed-by-script");
         });
     };
+
+    if (textNoter) {
+        textNoter.remove();
+        textNoter.classList.add("processed-by-script");      
+    }
 
 
     // Selected books. Example : https://www.babelio.com/categories/Non-fiction/10/tous

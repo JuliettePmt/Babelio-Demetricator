@@ -57,13 +57,6 @@ export function platformMetrics() {
         });
     };
 
-    // Nb of books (displayed in the banner of the user profile)
-    const nbBooksRead = document.querySelector("#page_corps > div > div.livre_header.row > div > div > a:nth-child(3)")
-
-    if (nbBooksRead.textContent.includes("Livres")) {
-        numberOfElementsArray.push(nbBooksRead);
-    };
-
     // >> Execution <<
         numberOfElementsArray.forEach(element => {
             element.childNodes.forEach(node => { // Use childNodes to prevent the suppression of all CSS style
@@ -72,4 +65,12 @@ export function platformMetrics() {
                 }
             });
         });
+    
+    // Nb of books (displayed in the banner of the user profile)
+    const  nbBooksRead = document.querySelector("#page_corps > div > div.livre_header.row > div > div > a:nth-child(3)")
+
+    if (nbBooksRead.textContent.includes("Livres")) {
+        nbBooksRead.remove() ;
+    };
+    
     }
