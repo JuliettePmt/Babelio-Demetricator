@@ -1,9 +1,9 @@
-// import { commercial} from "./assets/commercial.js";
+import { ratings } from "./assets/ratings.js";
 
-// commercial();
-
-
+ratings();
 
 
 
-// execute : npx webpack
+
+
+// Execute webpack : npx webpack
