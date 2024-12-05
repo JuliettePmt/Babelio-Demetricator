@@ -15,13 +15,13 @@ export function community() {
         });
     };
 
-    const communityCritics = document.querySelectorAll("span.qualite > a")
-    if (communityCritics) {
-        communityCritics.forEach(communityCritic => {
-            const numberOfCritics = communityCritic.querySelector('[id^="myspan"]');
-            if (numberOfCritics) {
-                numberOfCritics.style.display = "none";
-                numberOfCritics.classList.add("processed-by-script");
+    const commentaryOnCritics = document.querySelectorAll("span.qualite > a")
+    if (commentaryOnCritics) {
+        commentaryOnCritics.forEach(commentary => {
+            const numberOfCommentaryOnCritics = commentary.querySelector('[id^="myspan"]');
+            if (numberOfCommentaryOnCritics) {
+                numberOfCommentaryOnCritics.style.display = "none";
+                numberOfCommentaryOnCritics.classList.add("processed-by-script");
             };
         });
     }; 
