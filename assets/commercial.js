@@ -5,7 +5,6 @@ export function commercial() {
 
     commercials.forEach(element => {
         if (element) {
-
             const observer = new MutationObserver(() => {
                 element.remove();
                 element.style.display = "none";
@@ -18,3 +17,4 @@ export function commercial() {
         }
     });
 }
+
