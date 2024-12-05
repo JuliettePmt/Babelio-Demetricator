@@ -10,10 +10,21 @@ export function platformMetrics() {
         const infosSections = bannerBookInfo.querySelectorAll("a")
 
         infosSections.forEach(section => {
-            section.textContent = section.textContent.replace(/\s*\(.*?\)\s*/g, '');
+            numberOfElementsArray.push(section)
         });
         
     }
 
+    // "Critiques, Analyses et Avis (XXX)"
 
-}
+    const criticsNumber = document.querySelector("#critiques")
+    if (criticsNumber) numberOfElementsArray.push(criticsNumber)
+
+        numberOfElementsArray.forEach(element => {
+            element.childNodes.forEach(node => {
+                if (node.nodeType === Node.TEXT_NODE) {
+                    node.textContent = node.textContent.replace(/\s*\(.*?\)\s*/g, '');
+                }
+            });
+        });
+    }
