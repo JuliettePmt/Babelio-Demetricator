@@ -1,7 +1,9 @@
 export function ratings() {
     let ratingArray = []
 
-    // Recommended books to read next
+//******** MULTIPLE ELEMENTS ********
+
+    // Recommended books to read next (before critics)
     const recoBooks = document.querySelectorAll("div.list_livre:not(.hidden-by-script)");
 
     if (recoBooks) {
@@ -20,9 +22,21 @@ export function ratings() {
             }
         });
     }
+
+    // Community ratings (stars before critics)
+    const communityRatings = document.querySelectorAll ("span > div.entete_critique > div.entete_login > div")
+
+    if (communityRatings) {
+
+        communityRatings.forEach(communityRating => {
+            communityRating.style.display = "none";
+            communityRating.classList.add("processed-by-script");
+        });
+    };
     
 
-    // Top part of book page
+//******** UNIQUE ELEMENTS ********
+    // Top part of book page (beside metadata)
     const ratingValue = document.querySelector("#page_corps > div > div:nth-child(3) > div.side_l > div.livre_con > div.col.col-8 > span:nth-child(5) > span.texte_t2.rating")
     if (ratingValue) ratingArray.push(ratingValue);
 
@@ -32,14 +46,14 @@ export function ratings() {
     const ratingScale = document.querySelector("#page_corps > div > div:nth-child(3) > div.side_l > div.livre_con > div.col.col-8 > span:nth-child(5)")
     if (ratingScale) ratingArray.push(ratingScale);
 
-    // Bottom part of book page
 
+    // Bottom part of book page (just before critics)
     const distributionRatings = document.querySelector("#page_corps > div > div:nth-child(3) > div.side_l > div:nth-child(9)")
     if (distributionRatings) ratingArray.push(distributionRatings);
 
 
-    // Execution
 
+    //  >> Execution <<
     for (let i = 0; i < ratingArray.length; i++) {
         const element = ratingArray[i];
         if (element) {
