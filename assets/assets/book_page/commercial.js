@@ -24,7 +24,6 @@ export function commercial() {
     };
 
     if (commercialsV2) {
-        console.log("Zouk")
         commercialsV2.forEach(element => {
             if (element) {
                 const new_observer = new MutationObserver(() => {
