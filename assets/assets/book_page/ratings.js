@@ -20,6 +20,7 @@ export function ratings() {
                 bookCritics.style.display = "none";
                 bookCritics.classList.add("processed-by-script");
             }
+
         });
     }
 
@@ -47,7 +48,6 @@ export function ratings() {
     const ratingScale = document.querySelector("#page_corps > div > div:nth-child(3) > div.side_l > div.livre_con > div.col.col-8 > span:nth-child(5)")
     if (ratingScale) ratingArray.push(ratingScale);
 
-    
 
 
     // Bottom part of book page (just before critics)

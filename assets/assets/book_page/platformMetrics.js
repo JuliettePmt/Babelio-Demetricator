@@ -27,7 +27,8 @@ export function platformMetrics() {
     const citationsNumber = document.querySelector("#citations")
     if (citationsNumber) numberOfElementsArray.push(citationsNumber)
 
-    // Nb of readers
+
+    // Nb of readers (dynamic)
     const targetNode = document.querySelector("#page_corps > div > div:nth-child(3) > div.side_r");
     const observer = new MutationObserver(() => {
         const readersNumber = document.querySelector("#page_corps > div > div:nth-child(3) > div.side_r > div:nth-child(10) > div.titre");
@@ -44,10 +45,21 @@ export function platformMetrics() {
     if (targetNode) {
         observer.observe(targetNode, { childList: true, subtree: true });
     }
-    
+
+    // Number of citations between reco books 
+
+    const bookCitations = document.querySelectorAll("#page_corps > div > div > div.side_l > div > div > h3 > nobr > a")
+
+    if (bookCitations) {
+        bookCitations.forEach(bookCitation => {
+            bookCitation.style.display = "none";
+            bookCitation.classList.add("processed-by-script");
+        });
+    }
 
 
 
+    // >> Execution <<
         numberOfElementsArray.forEach(element => {
             element.childNodes.forEach(node => { // Use childNodes to prevent the suppression of all CSS style
                 if (node.nodeType === Node.TEXT_NODE) {
