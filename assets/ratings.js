@@ -27,7 +27,6 @@ export function ratings() {
     const communityRatings = document.querySelectorAll ("span > div.entete_critique > div.entete_login > div")
 
     if (communityRatings) {
-
         communityRatings.forEach(communityRating => {
             communityRating.style.display = "none";
             communityRating.classList.add("processed-by-script");
