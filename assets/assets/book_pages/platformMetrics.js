@@ -55,9 +55,14 @@ export function platformMetrics() {
             bookCitation.style.display = "none";
             bookCitation.classList.add("processed-by-script");
         });
-    }
+    };
 
+    // Nb of books (displayed in the banner of the user profile)
+    const nbBooksRead = document.querySelector("#page_corps > div > div.livre_header.row > div > div > a:nth-child(3)")
 
+    if (nbBooksRead.textContent.includes("Livres")) {
+        numberOfElementsArray.push(nbBooksRead);
+    };
 
     // >> Execution <<
         numberOfElementsArray.forEach(element => {
