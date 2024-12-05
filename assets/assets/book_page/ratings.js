@@ -33,7 +33,16 @@ export function ratings() {
             communityRating.classList.add("processed-by-script");
         });
     };
-    
+
+
+    // Selected books. Example : https://www.babelio.com/categories/Non-fiction/10/tous
+    const ratingSelectedBooks = document.querySelectorAll('[id^="rateit-range-"]');
+    if (ratingSelectedBooks) {
+        ratingSelectedBooks.forEach(ratingSelectedBook => {
+            ratingSelectedBook.style.display = "none";
+            ratingSelectedBook.classList.add("processed-by-script");
+        });
+    };    
 
 //******** UNIQUE ELEMENTS ********
     // Top part of book page (beside metadata)
