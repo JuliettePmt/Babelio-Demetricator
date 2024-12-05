@@ -36,7 +36,7 @@ export function ratings() {
 
 //******** UNIQUE ELEMENTS ********
     // Top part of book page (beside metadata)
-    const ratingValue = document.querySelector("#page_corps > div > div:nth-child(3) > div.side_l > div.livre_con > div.col.col-8 > span")
+    const ratingValue = document.querySelector("#page_corps > div > div:nth-child(3) > div.side_l > div.livre_con > div.col.col-8 > span:nth-child(7)")
     const ratingValueV2 = document.querySelector("#page_corps > div > div:nth-child(3) > div.side_l > div.livre_con > div.col.col-8 > span:nth-child(3)")
     if (ratingValue) ratingArray.push(ratingValue);
     if (ratingValueV2) ratingArray.push(ratingValueV2);
