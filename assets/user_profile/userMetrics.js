@@ -5,18 +5,16 @@ export function userMetrics() {
             element.remove()
         }
     }
+
     // *** Volet "Statistiques"
     const pageStatistics = document.querySelector("#page_corps > div > div.livre_header.row > div > div > a:nth-child(4)")
-
     if (pageStatistics.textContent == "Statistiques") {
         pageStatistics.remove()
     }
 
     // Reading challenge, nb of critics, badges, etc.
     const sideStatistics = document.querySelector("#page_corps > div > div.side_r > div:nth-child(1)")
-    if (sideStatistics) {
-        sideStatistics.remove()
-    }
+    removeElement(sideStatistics);
 
     // Number of books by category on profile (example : "Littérature italienne")
     const booksByCategories = document.querySelectorAll("#page_corps > div > div.side_l > div > div.liste_fiches > div")
@@ -44,8 +42,7 @@ export function userMetrics() {
     const columnReaders = document.querySelectorAll("#form-test > div.mes_livres > div.mes_livres_con > table > tbody > tr > td.lecteurs")
 
     const titleColumnReaders = document.querySelector("#form-test > div.mes_livres > div.mes_livres_con > table > thead > tr > th:nth-child(8)")
-
-    if (titleColumnReaders) {titleColumnReaders.remove()}
+    removeElement(titleColumnReaders);
 
     if (columnReaders) {
         columnReaders.forEach(column => {

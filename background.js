@@ -1,14 +1,19 @@
-chrome.extension.onRequest.addListener(
-    function(request, sender, sendResponse) {
-      // LOG THE CONTENTS HERE
-      console.log(request.content);
-    });
-  
-  chrome.tabs.getSelected(null, function(tab) {
-  
-    // Now inject a script onto the page
-    chrome.tabs.executeScript(tab.id, {
-         code: "chrome.extension.sendRequest({content: document.body.innerHTML}, function(response) { console.log('success'); });"
-       }, function() { console.log('done'); });
-  
-  });
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  console.log("Message received:", request);
+  sendResponse({ status: "Message processed successfully" });
+});
+
+chrome.action.onClicked.addListener(tab => {
+  console.log("Extension icon clicked");
+  chrome.scripting.executeScript(
+      {
+          target: { tabId: tab.id },
+          func: () => {
+              console.log("Script executed in the active tab.");
+          }
+      },
+      () => {
+          console.log("Execution completed.");
+      }
+  );
+});

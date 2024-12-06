@@ -4,28 +4,30 @@
     "description": "De-quantify Babelio",
     "manifest_version": 3,
     "author": "Juliette Parmentier",
-    "action":{
+    "action": {
         "default_popup": "extension-interface/index.html",
         "default_title": "Babelio Demetricator"
     },
     "icons": {
         "48": "images/logo_babelio.png",
         "128": "images/logo_babelio.png"
-      },
-
-    "background": { 
-        "service_worker": "background.js"   
-        },   
-    
-        "web_accessible_resources": [{
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "web_accessible_resources": [
+        {
+            "resources": ["assets/book_pages/ratings.js"],
+            "matches": ["<all_urls>"]
+        }
+    ],
+    "permissions": ["storage", "tabs", "scripting", "activeTab"],
+    "content_scripts": [
+        {
             "matches": ["<all_urls>"],
-            "resources": ["./assets/ratings.js"]
-          }],
-       
-    "permissions": ["storage", "tabs", "scripting"], 
-    "content_scripts":[
-        { "matches":["<all_urls>"], 
-        "js": ["dist/content.bundle.js"]
-        }   
-    ]
+            "js": ["dist/content.bundle.js"],
+            "run_at": "document_idle"
+        }
+    ],
+    "host_permissions": ["<all_urls>"]
 }
