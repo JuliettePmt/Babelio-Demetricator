@@ -39,5 +39,15 @@ export function commercial() {
         });
     }
 
+    // Onglet Critiques
+
+    const addBannerPageCritics = document.querySelector("#page_corps > div > div:nth-child(3) > div.side_r > div > div:nth-child(2)")
+
+    if (addBannerPageCritics) {
+        addBannerPageCritics.remove()
+        addBannerPageCritics.classList.add("hidden-by-script");
+    }
+
+
 }
 

@@ -26,4 +26,39 @@ export function community() {
         });
     }; 
 
+    const nbBooksLists = document.querySelectorAll("#page_corps > div > div > div.side_r > div > div > div.liste.row > div > div > h3");
+
+    if (nbBooksLists.length > 0) {
+        nbBooksLists.forEach(nbBooksList => {
+            // Traiter les "strong"
+            const nbBooksListsV1 = nbBooksList.querySelectorAll("strong");
+            if (nbBooksListsV1.length > 0) {
+                nbBooksListsV1.forEach(nbBooksListV1 => {
+                    nbBooksListV1.classList.add("processed-by-script");
+                    nbBooksListV1.remove();
+                });
+            }
+    
+            // Traiter les "span"
+            const nbBooksListsV2 = nbBooksList.querySelectorAll("span");
+            if (nbBooksListsV2.length > 0) {
+                nbBooksListsV2.forEach(nbBooksListV2 => {
+                    nbBooksListV2.classList.add("processed-by-script");
+                    nbBooksListV2.remove();
+                });
+            }
+        });
+    }
+    
+
+    const nbBooksListsV2 = document.querySelectorAll("#page_corps > div > div) > div.side_r > div > div > div.liste.row > div > div > h3 > span");
+
+    if (nbBooksListsV2.length > 0) {
+        nbBooksListsV2.forEach(nbBooksListV2 => {
+            nbBooksListV2.remove();
+            nbBooksListV2.classLis.add("processed-by-script");
+        });
+    }
+    
+
 }

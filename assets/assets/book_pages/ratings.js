@@ -70,14 +70,13 @@ export function ratings() {
     if (distributionRatings) ratingArray.push(distributionRatings);
 
 
-    // Onglet "Critiques"
-
+    //// Onglet "Critiques"
+    // Sumary of critics
     const summaryRatingsPageCritics = document.querySelector("#histogramme")
-
     if (summaryRatingsPageCritics) {
         summaryRatingsPageCritics.remove();
+        summaryRatingsPageCritics.classList.add("hidden-by-script");
     };
-
 
 
     //  >> Execution <<
