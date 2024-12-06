@@ -94,7 +94,7 @@ export function ratings() {
         });
     }
     
-
+ 
 
     //  >> Execution <<
     for (let i = 0; i < ratingArray.length; i++) {
