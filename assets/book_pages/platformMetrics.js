@@ -1,4 +1,3 @@
-
 export function platformMetrics() {
 
     let numberOfElementsArray = []

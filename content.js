@@ -5,10 +5,11 @@ import { commercial } from "./assets/book_pages/commercial.js";
 import { userMetrics } from "./assets/user_profile/userMetrics.js";
 
 // BOOK PAGES
-ratings();
-community();
-platformMetrics() ;
 commercial();
+ratings();
+platformMetrics() ;
+
+community();
 
 // USER PROFILE
 userMetrics();
