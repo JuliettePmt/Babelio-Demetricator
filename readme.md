@@ -9,8 +9,8 @@ This experiment was inspired by [Ben Grosser](https://bengrosser.com/) and his [
 
 ### Before :
 <img src="assets/images/Before.png" alt="Before" width="400"/>
-<img src="assets/images/BeforeV2.png" alt="Before" width="400"/>
+<img src="assets/images/Before2.png" alt="Before" width="400"/>
 
 
-### After :
-<img src="assets/images/After.png" alt="After" width="400"/>
+<!-- ### After :
+<img src="assets/images/After.png" alt="After" width="400"/> -->
