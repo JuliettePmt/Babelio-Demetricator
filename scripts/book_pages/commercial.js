@@ -1,7 +1,6 @@
 // Delete all ads and commercial calls to action
 
 export function commercial() {
-    console.log("test")
     const commercials = document.querySelector("#page_corps > div > div:nth-child(3) > div.side_r > div:nth-child(2)");
 
     // For smaller screens

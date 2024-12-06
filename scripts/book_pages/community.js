@@ -53,4 +53,19 @@ export function community() {
             nbBooksListV2.classList.add("processed-by-script");
         });
     }
+
+    // "Lecteurs les plus actifs cette semaine" : delete number of critics
+    const bestUserCriticsCard = document.querySelectorAll("div.fiche_lecteur > a");
+
+    if (bestUserCriticsCard.length > 0) {
+        bestUserCriticsCard.forEach(userCard => {
+            // Iterate through the child elements of the <a> element
+            userCard.childNodes.forEach(node => {
+                if (node.nodeType === Node.TEXT_NODE && node.textContent.match(/\d+\s*critiques/)) {
+                    node.textContent = node.textContent.replace(/\d+\s*critiques/, '').trim();
+                }
+            });
+        });
+    }
+    
 }
