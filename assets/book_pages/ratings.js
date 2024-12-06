@@ -75,8 +75,25 @@ export function ratings() {
     const summaryRatingsPageCritics = document.querySelector("#histogramme")
     if (summaryRatingsPageCritics) {
         summaryRatingsPageCritics.remove();
-        summaryRatingsPageCritics.classList.add("hidden-by-script");
     };
+
+    /// Search page
+    const bookRatingSearch = document.querySelectorAll("div.sgst_auteur_txt");
+
+    if (bookRatingSearch) {
+        bookRatingSearch.forEach(bookRating => {
+            const bookStats = bookRating.querySelector("br");
+            if (bookStats) {
+                let statistic = bookStats.nextSibling;
+                while (statistic) {
+                    const nextSibling = statistic.nextSibling;
+                    statistic.remove();
+                    statistic = nextSibling;
+                }
+            }
+        });
+    }
+    
 
 
     //  >> Execution <<
