@@ -2,7 +2,7 @@ export function platformMetrics() {
 
     let numberOfElementsArray = []
 
-    // Banner with press and community critics, citations
+    // Top banner with press and community critics, citations
     const bannerBookInfo = document.querySelector("#page_corps > div > div:nth-child(3) > div.livre_header.row > table > tbody > tr > td:nth-child(2) > div > div")
 
     if (bannerBookInfo) {
@@ -13,9 +13,8 @@ export function platformMetrics() {
         });
         
     }
-
         
-    // Nb of books (displayed in the banner of the user profile)
+    // Nb of books read (displayed in the banner of the user profile) : "Livres (XXX)"
     const nbBooksRead = document.querySelector("#page_corps > div > div.livre_header.row > div > div > a");
 
     if (nbBooksRead && nbBooksRead.textContent.includes("Livres")) {
@@ -26,35 +25,38 @@ export function platformMetrics() {
     const criticsNumber = document.querySelector("#critiques")
     if (criticsNumber) numberOfElementsArray.push(criticsNumber)
 
-    // Bottom nb of press critics
+    // Bottom nb of press critics ("Presse (XXX)")
     const pressNumber = document.querySelector("#critiques_presse")
     if (pressNumber) numberOfElementsArray.push(pressNumber)
 
-    // Bottom nb of citations
+    // Bottom nb of citations ("Citations (XXX)")
     const citationsNumber = document.querySelector("#citations")
     if (citationsNumber) numberOfElementsArray.push(citationsNumber)
 
-
     // Nb of readers (dynamic)
-    const targetNode = document.querySelector("#page_corps > div > div:nth-child(3) > div.side_r");
-    const observer = new MutationObserver(() => {
-        const readersNumber = document.querySelector("#page_corps > div > div:nth-child(3) > div.side_r > div:nth-child(10) > div.titre");
-        if (readersNumber && !numberOfElementsArray.includes(readersNumber)) {
-            numberOfElementsArray.push(readersNumber);
-            readersNumber.childNodes.forEach(node => {
-                if (node.nodeType === Node.TEXT_NODE) {
-                    node.textContent = node.textContent.replace(/\s*\(.*?\)\s*/g, '');
-                }
-            });
-            observer.disconnect();
-        }
-    });
-    if (targetNode) {
-        observer.observe(targetNode, { childList: true, subtree: true });
+    const targetNodeNbReaders = document.querySelector("div.side_r");
+
+    if (targetNodeNbReaders) {
+        const observer = new MutationObserver(() => {
+            const readersDiv = Array.from(targetNodeNbReaders.querySelectorAll("div.titre"))
+                .find(div => div.textContent.includes("Lecteurs"));
+            if (readersDiv) {
+                readersDiv.childNodes.forEach(node => {
+                    if (node.nodeType === Node.TEXT_NODE && node.textContent.includes("Lecteurs")) {
+                        node.textContent = node.textContent.replace(/\(\d+\)/g, ''); // Remove directly only the number in parentheses
+                    }
+                });
+                observer.disconnect();
+            }
+        });
+    
+        observer.observe(targetNodeNbReaders, { childList: true, subtree: true });
     }
+    
+    
+
 
     // Number of citations between reco books 
-
     const bookCitations = document.querySelectorAll(".side_l h3 nobr a");
 
     if (bookCitations) {

@@ -8,7 +8,6 @@ import { userMetrics } from "./assets/user_profile/userMetrics.js";
 commercial();
 ratings();
 platformMetrics() ;
-
 community();
 
 // USER PROFILE

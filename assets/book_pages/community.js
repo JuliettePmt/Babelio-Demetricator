@@ -1,8 +1,7 @@
-
 export function community() {
 
     // Likes on critics
-    const communityLikes = document.querySelectorAll("span.qualite > span.post_items_like")
+    const communityLikes = document.querySelectorAll("span.qualite > span.post_items_like");
 
     if (communityLikes) {
         communityLikes.forEach(communityLike => {
@@ -13,24 +12,23 @@ export function community() {
                 numberLikes.classList.add("processed-by-script");
             }
         });
-    };
+    }
 
-    const commentaryOnCritics = document.querySelectorAll("span.qualite > a")
+    const commentaryOnCritics = document.querySelectorAll("span.qualite > a");
     if (commentaryOnCritics) {
         commentaryOnCritics.forEach(commentary => {
             const numberOfCommentaryOnCritics = commentary.querySelector('[id^="myspan"]');
             if (numberOfCommentaryOnCritics) {
                 numberOfCommentaryOnCritics.style.display = "none";
                 numberOfCommentaryOnCritics.classList.add("processed-by-script");
-            };
+            }
         });
-    }; 
+    }
 
     const nbBooksLists = document.querySelectorAll("#page_corps > div > div > div.side_r > div > div > div.liste.row > div > div > h3");
 
     if (nbBooksLists.length > 0) {
         nbBooksLists.forEach(nbBooksList => {
-            // Traiter les "strong"
             const nbBooksListsV1 = nbBooksList.querySelectorAll("strong");
             if (nbBooksListsV1.length > 0) {
                 nbBooksListsV1.forEach(nbBooksListV1 => {
@@ -39,7 +37,6 @@ export function community() {
                 });
             }
     
-            // Traiter les "span"
             const nbBooksListsV2 = nbBooksList.querySelectorAll("span");
             if (nbBooksListsV2.length > 0) {
                 nbBooksListsV2.forEach(nbBooksListV2 => {
@@ -49,16 +46,13 @@ export function community() {
             }
         });
     }
-    
 
-    const nbBooksListsV2 = document.querySelectorAll("#page_corps > div > div) > div.side_r > div > div > div.liste.row > div > div > h3 > span");
+    const nbBooksListsV2 = document.querySelectorAll("#page_corps > div > div > div.side_r > div > div > div.liste.row > div > div > h3 > span");
 
     if (nbBooksListsV2.length > 0) {
         nbBooksListsV2.forEach(nbBooksListV2 => {
             nbBooksListV2.remove();
-            nbBooksListV2.classLis.add("processed-by-script");
+            nbBooksListV2.classList.add("processed-by-script");
         });
     }
-    
-
 }
