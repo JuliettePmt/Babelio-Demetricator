@@ -15,11 +15,15 @@ export function platformMetrics() {
     }
         
     // Nb of books read (displayed in the banner of the user profile) : "Livres (XXX)"
-    const nbBooksRead = document.querySelector("#page_corps > div > div.livre_header.row > div > div > a");
+    const nbBooksRead = Array.from(document.querySelectorAll("#page_corps > div > div.livre_header.row > div > div"))
+    .find(a => a.textContent.includes("Livres"));
 
-    if (nbBooksRead && nbBooksRead.textContent.includes("Livres")) {
-        numberOfElementsArray.push(nbBooksRead)
+    if (nbBooksRead) {
+        Array.from(nbBooksRead.childNodes).forEach(node => {
+                node.textContent = node.textContent.replace(/\(\d+\)/g, '');
+        });
     }
+
 
     // "Critiques, Analyses et Avis (XXX)"
     const criticsNumber = document.querySelector("#critiques")
