@@ -16,19 +16,11 @@ export function platformMetrics() {
     }
 
         
-    // Nb of books (displayed in the banner of the user profile) : MUST BE AT THE END
-    // const nbBooksRead = document.querySelector("#page_corps > div > div.livre_header.row > div > div > a:nth-child(3)")
+    // Nb of books (displayed in the banner of the user profile)
+    const nbBooksRead = document.querySelector("#page_corps > div > div.livre_header.row > div > div > a");
 
-    // if (nbBooksRead) {
-    //     nbBooksRead.remove();
-    // }
-
-    if (window.location.href.includes("https://www.babelio.com/monprofil.php")) {
-        const nbBooksRead = document.querySelector("#page_corps > div > div.livre_header.row > div > div > a:nth-child(3)");
-    
-        if (nbBooksRead && nbBooksRead.textContent.includes("Livres")) {
-            numberOfElementsArray.push(nbBooksRead)
-        }
+    if (nbBooksRead && nbBooksRead.textContent.includes("Livres")) {
+        numberOfElementsArray.push(nbBooksRead)
     }
 
     // "Critiques, Analyses et Avis (XXX)"
@@ -64,7 +56,7 @@ export function platformMetrics() {
 
     // Number of citations between reco books 
 
-    const bookCitations = document.querySelectorAll("#page_corps > div > div > div.side_l > div > div > h3 > nobr > a")
+    const bookCitations = document.querySelectorAll(".side_l h3 nobr a");
 
     if (bookCitations) {
         bookCitations.forEach(bookCitation => {

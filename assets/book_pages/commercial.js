@@ -6,6 +6,7 @@ export function commercial() {
     // For smaller screens
     const commercialsV2 = document.querySelectorAll(".no-desktop");
     
+    
 
     if (commercials) { 
         commercials.forEach(element => {
