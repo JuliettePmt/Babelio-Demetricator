@@ -1,5 +1,10 @@
 export function userMetrics() {
 
+    function removeElement(element) {
+        if (element) {
+            element.remove()
+        }
+    }
     // *** Volet "Statistiques"
     const pageStatistics = document.querySelector("#page_corps > div > div.livre_header.row > div > div > a:nth-child(4)")
 
@@ -35,5 +40,26 @@ export function userMetrics() {
         });
     }
 
+    // Delete nb of readers from "Mes livres" table
+    const columnReaders = document.querySelectorAll("#form-test > div.mes_livres > div.mes_livres_con > table > tbody > tr > td.lecteurs")
+
+    const titleColumnReaders = document.querySelector("#form-test > div.mes_livres > div.mes_livres_con > table > thead > tr > th:nth-child(8)")
+
+    if (titleColumnReaders) {titleColumnReaders.remove()}
+
+    if (columnReaders) {
+        columnReaders.forEach(column => {
+            const nbReaders = column.querySelector("a");
+            nbReaders.remove();
+        }); 
+    }
+
+    // Delete grade selector from "Mes livres" (trier par note)
+
+    const gradeSelector = document.querySelector("#form-test > div.mes_livres_form > div.mes_livres_top.row > div:nth-child(5) > div:nth-child(3)")
+    removeElement(gradeSelector)
+
+
+        
 
 }
