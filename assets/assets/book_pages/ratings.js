@@ -70,6 +70,15 @@ export function ratings() {
     if (distributionRatings) ratingArray.push(distributionRatings);
 
 
+    // Onglet "Critiques"
+
+    const summaryRatingsPageCritics = document.querySelector("#histogramme")
+
+    if (summaryRatingsPageCritics) {
+        summaryRatingsPageCritics.remove();
+    };
+
+
 
     //  >> Execution <<
     for (let i = 0; i < ratingArray.length; i++) {
