@@ -99,13 +99,31 @@ export function community() {
     // GROUPS
 
     // Nb of users in groups + nb of messages
-    
     const metadataGroups = document.querySelectorAll("div > div > div > a > table > tbody > tr > td > div > div > span")
 
     if (metadataGroups) {
         metadataGroups.forEach(metadata => {
             metadata.remove();
         });
+    }
+
+    // Nb of messages (inside groups)
+    const nbMessagesGroups = document.querySelectorAll("div > div > div > a > table > tbody > tr > td > div > span > a")
+
+    if (nbMessagesGroups) {
+        nbMessagesGroups.forEach(metadata => {
+            metadata.remove();
+        });
+    };
+
+    // Users in groups ("PARTICIPANTS ()")
+
+    const nbUsersGroups = document.querySelector("#page_corps > div > div.side_r > div > div.titre")
+
+    if (nbUsersGroups) {
+        Array.from(nbUsersGroups.childNodes).forEach(node => {
+            node.textContent = node.textContent.replace(/\(\d+\)/g, '');
+    });
     }
 
 }
