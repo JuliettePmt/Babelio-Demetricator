@@ -67,5 +67,29 @@ export function community() {
             });
         });
     }
+
+
+    const numberUsersQuiz = document.querySelectorAll("div > div > div > div.col-9.col > h3 > small")
+
+    if (numberUsersQuiz) {
+        numberUsersQuiz.forEach(nbUsersQuiz => {
+            nbUsersQuiz.remove();
+        });
+    }
+
+    const metadataQuiz = document.querySelectorAll("div > div > div > div > h3 > a");
+
+    metadataQuiz.forEach(link => {
+        let ratingQuiz = link.nextSibling;
+    
+        while (ratingQuiz && (ratingQuiz.nodeType !== Node.TEXT_NODE || !ratingQuiz.nodeValue.trim())) {
+            ratingQuiz = ratingQuiz.nextSibling;
+        }
+    
+        if (ratingQuiz) {
+            console.log("Texte suivant :", ratingQuiz.nodeValue.trim());
+            ratingQuiz.remove();
+        }
+    });
     
 }

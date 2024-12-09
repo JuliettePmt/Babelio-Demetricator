@@ -57,7 +57,7 @@ export function ratings() {
     if (ratingValue) ratingArray.push(ratingValue);
     if (ratingValueV2) ratingArray.push(ratingValueV2);
 
-    const ratingStars = document.querySelector("#page_corps > div > div:nth-child(3) > div.side_l > div.livre_con > div.col.col-8 > div.rateit.rateit-font")
+    const ratingStars = document.querySelector("div.rateit")
     if (ratingStars) ratingArray.push(ratingStars);
 
     const ratingScale = document.querySelector("#page_corps > div > div:nth-child(3) > div.side_l > div.livre_con > div.col.col-8 > span:nth-child(5)")
