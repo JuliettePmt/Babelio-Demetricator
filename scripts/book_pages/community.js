@@ -107,6 +107,7 @@ export function community() {
         });
     }
 
+    
     // Nb of messages (inside groups)
     const nbMessagesGroups = document.querySelectorAll("div > div > div > a > table > tbody > tr > td > div > span > a")
 
@@ -116,8 +117,8 @@ export function community() {
         });
     };
 
-    // Users in groups ("PARTICIPANTS ()")
 
+    // Users in groups ("PARTICIPANTS ()")
     const nbUsersGroups = document.querySelector("#page_corps > div > div.side_r > div > div.titre")
 
     if (nbUsersGroups) {
