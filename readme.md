@@ -2,6 +2,7 @@ A Chrome extension removing all statistics, rankings, ratings, etc. from the int
 
 This experiment was inspired by [Ben Grosser](https://bengrosser.com/) and his [Facebook Demetricator](https://chromewebstore.google.com/detail/facebook-demetricator/dbkgglbefgkimiadfjmgnkjmaoahephg).
 
+Chrome version [available here](https://chromewebstore.google.com/detail/babelio-demetricator/naflkjcclkkaallpfpkokchcgjclifag?hl=fr&pli=1)
 
 
 
