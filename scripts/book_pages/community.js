@@ -66,9 +66,12 @@ export function community() {
                 }
             });
         });
-    }
+    };
 
 
+    // QUIZ
+
+    // Nb of users for each quiz
     const numberUsersQuiz = document.querySelectorAll("div > div > div > div.col-9.col > h3 > small")
 
     if (numberUsersQuiz) {
@@ -77,8 +80,8 @@ export function community() {
         });
     }
 
+    // Quiz rating
     const metadataQuiz = document.querySelectorAll("div > div > div > div > h3 > a");
-
     metadataQuiz.forEach(link => {
         let ratingQuiz = link.nextSibling;
     
@@ -92,4 +95,17 @@ export function community() {
         }
     });
     
+
+    // GROUPS
+
+    // Nb of users in groups + nb of messages
+    
+    const metadataGroups = document.querySelectorAll("div > div > div > a > table > tbody > tr > td > div > div > span")
+
+    if (metadataGroups) {
+        metadataGroups.forEach(metadata => {
+            metadata.remove();
+        });
+    }
+
 }
