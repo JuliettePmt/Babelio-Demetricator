@@ -13,7 +13,8 @@ export function platformMetrics() {
         });
         
     }
-        
+
+
     // Nb of books read (displayed in the banner of the user profile) : "Livres (XXX)"
     const nbBooksRead = Array.from(document.querySelectorAll("#page_corps > div > div.livre_header.row > div > div"))
     .find(a => a.textContent.includes("Livres"));
@@ -56,8 +57,6 @@ export function platformMetrics() {
     
         observer.observe(targetNodeNbReaders, { childList: true, subtree: true });
     }
-    
-    
 
 
     // Number of citations between reco books 
@@ -69,6 +68,7 @@ export function platformMetrics() {
             bookCitation.classList.add("processed-by-script");
         });
     };
+
 
     // >> Execution <<
         numberOfElementsArray.forEach(element => {

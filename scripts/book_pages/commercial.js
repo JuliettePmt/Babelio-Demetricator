@@ -20,8 +20,8 @@ export function commercial() {
     removeBuyAds(commercials);
     removeBuyAds(commercialsV2);
 
+    
     // Onglet Critiques
-
     const addBannerPageCritics = document.querySelector("#page_corps > div > div:nth-child(3) > div.side_r > div > div:nth-child(2)")
 
     if (addBannerPageCritics) {
