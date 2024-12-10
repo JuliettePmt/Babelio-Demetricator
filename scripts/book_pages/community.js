@@ -118,13 +118,38 @@ export function community() {
     };
 
 
-    // Users in groups ("PARTICIPANTS ()")
+    // Users in groups ("PARTICIPANTS (XXX)")
     const nbUsersGroups = document.querySelector("#page_corps > div > div.side_r > div > div.titre")
 
     if (nbUsersGroups) {
         Array.from(nbUsersGroups.childNodes).forEach(node => {
             node.textContent = node.textContent.replace(/\(\d+\)/g, '');
-    });
+        });
     }
 
-}
+    // "En train de lire (XXX)"
+    const titleBanner = document.querySelectorAll("div.titre");
+
+    titleBanner.forEach(titreDiv => {
+        let titreHTML = titreDiv.innerHTML;
+    
+        titreHTML = titreHTML.replace(/\(\d+\)/, '').trim(); // Supprimer les parenthèses et leur contenu
+    
+        titreDiv.innerHTML = titreHTML;
+    });
+
+
+    // "XXX livres en commun" sur le profil d'un utilisateur
+    const commonBooks = document.querySelectorAll("div.livre_refs");
+
+    commonBooks.forEach(book => {
+        // Vérifiez si le texte contient un nombre suivi de "livres en commun"
+        if (book.textContent.match(/^\d+\s*livres en commun/)) {
+            // Supprimer l'élément si la condition est vraie
+            book.remove();
+        }
+    });
+    
+    
+    
+};
