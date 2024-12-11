@@ -149,7 +149,17 @@ export function community() {
             book.remove();
         }
     });
-    
+
+    // Nb of books insigne
+    const nbBooksInsigne = document.querySelectorAll("div.gris");
+
+    if (nbBooksInsigne.length > 0) {
+        nbBooksInsigne.forEach(bookNb => {
+            if (bookNb.textContent.match(/^\d+\s*livres/)) {
+                bookNb.textContent = bookNb.textContent.replace(/\s?\(\+\d+\)/, '').trim();
+            }
+        });
+    }
     
     
 };
