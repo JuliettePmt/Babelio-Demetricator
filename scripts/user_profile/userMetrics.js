@@ -6,15 +6,42 @@ export function userMetrics() {
         }
     }
 
+    
     // *** Volet "Statistiques"
     const pageStatistics = document.querySelector("#page_corps > div > div.livre_header.row > div > div > a:nth-child(4)")
     if (pageStatistics.textContent == "Statistiques") {
         pageStatistics.remove()
     }
 
-    // Reading challenge, nb of critics, badges, etc.
-    const sideStatistics = document.querySelector("#page_corps > div > div.side_r > div:nth-child(1)")
-    removeElement(sideStatistics);
+
+    // Nb followers (première page)
+    const nbFollowers = document.querySelectorAll('a[href="/abonnes"]');
+
+    nbFollowers.forEach(link => {
+        link.remove();
+    });
+
+    // Nb following (première page)
+    const nbFollowing = document.querySelectorAll('a[href="/abonnements"]');
+
+    nbFollowing.forEach(link => {
+        link.remove();
+    });
+
+    // Insignes et contributions
+    const insigneBanner = document.querySelector("#page_corps > div > div.side_r > div > div:nth-child(7)");
+
+    if (insigneBanner && insigneBanner.textContent.includes("insignes")) {
+        insigneBanner.remove();
+    
+        const sidePanel = document.querySelector("div.side_r");
+        const allSeparators = sidePanel.querySelectorAll("div.sep");
+    
+        if (allSeparators.length > 1) {
+            allSeparators[1].remove();  // Supprimer le second élément (index 1)
+        }
+    }
+    
 
     // Number of books by category on profile (example : "Littérature italienne")
     const booksByCategories = document.querySelectorAll("#page_corps > div > div.side_l > div > div.liste_fiches > div")
@@ -52,11 +79,16 @@ export function userMetrics() {
     }
 
     // Delete grade selector from "Mes livres" (trier par note)
+    const gradeSelector = document.querySelectorAll("div.styled-select");
 
-    const gradeSelector = document.querySelector("#form-test > div.mes_livres_form > div.mes_livres_top.row > div:nth-child(5) > div:nth-child(3)")
-    removeElement(gradeSelector)
-
+    if (gradeSelector.length > 0) {
+        gradeSelector.forEach(selector => {
+            if (selector.textContent.includes("Note")) {
+                selector.remove(); 
+            }
+        });
+    }
+    
 
         
-
 }
