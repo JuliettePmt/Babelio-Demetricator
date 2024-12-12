@@ -28,21 +28,21 @@ export function userMetrics() {
         link.remove();
     });
 
-    // Insignes et contributions
-    // const insigneBanner = document.querySelector("#page_corps > div > div.side_r > div > div:nth-child(7)");
+    // Insignes et contributions (sur la page Accueil du profil)
+    const insigneBanner = document.querySelector("#page_corps > div > div.side_r > div > div:nth-child(7)");
 
-    // if (insigneBanner && insigneBanner.textContent.includes("insignes")) {
-    //     insigneBanner.remove();
+    if (insigneBanner && insigneBanner.textContent.includes("insignes")) {
+        insigneBanner.remove();
     
 
-    //     const allSeparators = sidePanel.querySelectorAll("div.sep");
-    //     if (allSeparators.length > 1) {
-    //         allSeparators[1].remove();  // Supprimer le second élément (index 1)
-    //     }
-    // }
+        const allSeparators = sidePanel.querySelectorAll("div.sep");
+        if (allSeparators.length > 1) {
+            allSeparators[1].remove();  // Supprimer le second élément (index 1)
+        }
+    }
 
+    // Insignes et contributions (sur le reste du profil)
     const sidePanel = document.querySelector("div.side_r_content");
-
     if(sidePanel) {
         sidePanel.remove()
     }
