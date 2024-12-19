@@ -4,6 +4,7 @@ import { platformMetrics } from "./scripts/book_pages/platformMetrics.js";
 import { commercial } from "./scripts/book_pages/commercial.js";
 import { userMetrics } from "./scripts/user_profile/userMetrics.js";
 
+
 // BOOK PAGES
 commercial();
 ratings();
@@ -14,3 +15,4 @@ community();
 userMetrics();
 
 // Execute webpack : npx webpack
+

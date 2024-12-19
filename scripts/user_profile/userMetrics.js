@@ -41,11 +41,13 @@ export function userMetrics() {
         }
     }
 
-    // Insignes et contributions (sur le reste du profil)
+    // Insignes et contributions (sur le reste du site)
     const sidePanel = document.querySelector("div.side_r_content");
     if(sidePanel) {
         sidePanel.remove()
     }
+    // Insignes et contributions (page d'accueil)
+    
     
 
     // Number of books by category on profile (example : "Littérature italienne")
