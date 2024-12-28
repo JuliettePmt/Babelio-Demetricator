@@ -32,10 +32,11 @@ def copyFiles(current_path, folder_path, folder_name):
         if item in exclude_items:
             print(f"Excluded : {item}")
             continue
-
+        
         if os.path.isfile(item_path):
-            shutil.copy(item_path, destination_path) 
-
+            shutil.copy(item_path, destination_path)
+        elif os.path.isdir(item_path):
+            shutil.copytree(item_path, destination_path)
 
 def replaceJSFiles(directory, old_text, new_text):
     for root, _, files in os.walk(directory):
