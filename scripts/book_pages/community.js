@@ -131,12 +131,13 @@ export function community() {
     const titleBanner = document.querySelectorAll("div.titre");
 
     titleBanner.forEach(titreDiv => {
-        let titreHTML = titreDiv.innerHTML;
-    
-        titreHTML = titreHTML.replace(/\(\d+\)/, '').trim(); // Supprimer les parenthèses et leur contenu
-    
-        titreDiv.innerHTML = titreHTML;
+        let titreText = titreDiv.textContent; 
+        
+        titreText = titreText.replace(/\(\d+\)/, '').trim(); 
+        
+        titreDiv.textContent = titreText;
     });
+    
 
 
     // "XXX livres en commun" sur le profil d'un utilisateur
