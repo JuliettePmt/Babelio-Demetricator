@@ -34,8 +34,7 @@ def copyFiles(current_path, folder_path, folder_name):
             continue
 
         if os.path.isfile(item_path):
-            shutil.copy(item_path, destination_path)
-
+            shutil.copy(item_path, destination_path) 
 
 
 def replaceJSFiles(directory, old_text, new_text):
