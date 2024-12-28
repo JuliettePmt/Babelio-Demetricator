@@ -14,5 +14,5 @@ community();
 // USER PROFILE
 userMetrics();
 
-// Execute webpack : npx webpack
+// Execute : npm run build
 
