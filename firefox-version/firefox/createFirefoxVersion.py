@@ -37,6 +37,7 @@ def copyFiles(current_path, folder_path, folder_name):
             shutil.copy(item_path, destination_path)
         elif os.path.isdir(item_path):
             shutil.copytree(item_path, destination_path)
+            
 
 def replaceJSFiles(directory, old_text, new_text):
     for root, _, files in os.walk(directory):
@@ -51,6 +52,7 @@ def replaceJSFiles(directory, old_text, new_text):
                 
                 with open(file_path, "w", encoding="utf-8") as f:
                     f.write(updated_content)
+                    
 
 def copyManifest(manifest_directory, folder_path, current_path):
     source_file = os.path.join(manifest_directory, "manifest.json")
@@ -83,6 +85,6 @@ def copyManifest(manifest_directory, folder_path, current_path):
     print(f"Manifest updated.")
 
 
-
+# ------------------------------
 
 createFirefoxVersion()
