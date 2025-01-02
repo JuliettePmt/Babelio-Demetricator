@@ -2,6 +2,7 @@ A Chrome extension removing all statistics, rankings, ratings, etc. from the int
 
 This experiment was inspired by [Ben Grosser](https://bengrosser.com/) and his [Facebook Anti-Quanti](https://chromewebstore.google.com/detail/facebook-Anti-Quanti/dbkgglbefgkimiadfjmgnkjmaoahephg).
 
+
 ---------
 ### Download :
 

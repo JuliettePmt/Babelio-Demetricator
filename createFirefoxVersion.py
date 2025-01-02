@@ -32,8 +32,7 @@ def createFolder(current_path, folder_path_firefox, folder_name_firefox):
 
 def copyFiles(current_path, folder_path_firefox, folder_name_firefox, chrome_directory):
 
-    exclude_items = ["manifest.json",
-                     "firefox-version", "firefox-version", ".git"]
+    exclude_items = ["manifest.json", "firefox-version", ".git"]
 
     for item in os.listdir(chrome_directory):
         item_path = os.path.join(chrome_directory, item)
