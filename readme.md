@@ -14,8 +14,8 @@ This experiment was inspired by [Ben Grosser](https://bengrosser.com/) and his [
 ---------
 
 #### Examples of metrics deleted from the interface :
-<img src="assets/images/Before.png" alt="Before" width="400"/>
-<img src="assets/images/Before2.png" alt="Before" width="400"/>
+<img src="chrome-version/assets/images/Before.png" alt="Before" width="400"/>
+<img src="chrome-version/assets/images/Before2.png" alt="Before" width="400"/>
 
 
 <!-- ### After :
