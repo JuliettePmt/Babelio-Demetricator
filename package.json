@@ -1,5 +1,15 @@
 {
-    "scripts": {
-        "build": "python3 createFirefoxVersion.py && webpack"
-    }
+  "name": "4.-babelio-anti-quanti",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "python3 ./createFirefoxVersion.py && cd chrome-version && npx webpack"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "web-extension": "^1.0.26"
+  }
 }

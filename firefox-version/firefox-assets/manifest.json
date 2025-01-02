@@ -1,0 +1,44 @@
+{
+    "name": "Babelio Anti-Quanti",
+    "version": "1.9.4",
+    "description": "D\u00e9-quantifier Babelio sur Firefox",
+    "manifest_version": 2,
+    "author": "Juliette P.",
+    "browser_action": {
+        "default_popup": "extension-interface/index.html",
+        "default_title": "Babelio Anti-Quanti",
+        "default_icon": {
+            "48": "assets/images/logo_babelio.png",
+            "128": "assets/images/logo_babelio.png"
+        }
+    },
+    "icons": {
+        "128": "assets/images/logo_babelio.png"
+    },
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": false
+    },
+    "web_accessible_resources": [
+        "scripts/book_pages/ratings.js"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "dist/content.bundle.js"
+            ],
+            "run_at": "document_idle"
+        }
+    ],
+    "permissions": [
+        "storage",
+        "tabs",
+        "activeTab",
+        "webNavigation"
+    ]
+}
