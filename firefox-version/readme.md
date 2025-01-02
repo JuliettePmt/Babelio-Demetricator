@@ -1,7 +1,7 @@
 
 ### How to create Firefox version :
 
-1. Execute ```npm run build``` in the 'chrome-version' folder. 
+1. Execute ```npm run build``` in the root folder. 
    
 2. Launch ```createFirefoxVersion.py``` script
 
