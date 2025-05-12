@@ -11,17 +11,17 @@ export function userMetrics() {
       }
     }
 
-    // Nb followers (première page)
-    const nbFollowers = document.querySelectorAll('a[href="/abonnes"]');
-
+    // Nb d'abonnés (première page)
+    const nbFollowers = document.querySelectorAll('a')
     if (nbFollowers.length > 0) {
-      nbFollowers.forEach((link) => {
+      nbFollowers.forEach(e.id.startsWith("abonnes"))
+      e.forEach((link) => {
         link.remove();
       });
     }
 
-    // Nb following (première page)
-    const nbFollowing = document.querySelectorAll('a[href="/abonnements"]');
+    // Nb d'abonnements (première page)
+    const nbFollowing = document.querySelectorAll('a[href="/abonnements');
 
     if (nbFollowing.length > 0) {
       nbFollowing.forEach((link) => {
@@ -54,9 +54,9 @@ export function userMetrics() {
       }
     }
 
-  //   // Insignes et contributions (page d'accueil)
+  //   Insignes et contributions (page d'accueil)
 
-  //   // Number of books by category on profile (example : "Littérature italienne")
+  //   Number of books by category on profile (example : "Littérature italienne")
     const booksByCategories = document.querySelectorAll(
       "#page_corps > div > div.side_l > div > div.liste_fiches > div"
     );
@@ -69,9 +69,9 @@ export function userMetrics() {
       });
     }
 
-  //   // *** Volet "Mes livres"
+  //   *** Volet "Mes livres"
 
-  //   // Statistiques : nombre de citations & critiques
+  //  Statistiques : nombre de citations & critiques
     const nbQuotesMyBooks = document.querySelectorAll(
       "#form-test > div.mes_livres > div.mes_livres_con > table > tbody > tr > td.titre_livre > a.titre_livre_elements"
     );
@@ -103,7 +103,7 @@ export function userMetrics() {
       });
     }
 
-    // Delete grade selector from "Mes livres" (trier par note)
+    // Supprimer le sélecteur de notes de "Mes livres" (pour trier par notes)
     const gradeSelector = document.querySelectorAll("div.styled-select");
 
     if (gradeSelector.length > 0) {

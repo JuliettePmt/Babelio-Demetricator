@@ -30,6 +30,5 @@ export function commercial() {
         addBannerPageCritics.classList.add("hidden-by-script");
     };
 
-
 }
 
