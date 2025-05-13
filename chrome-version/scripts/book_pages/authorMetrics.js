@@ -65,15 +65,17 @@ export function authorMetrics() {
         });
     }  
     
-    // PAGE DE RECHERCHE D'UN AUTEUR
+    // PAGE DE RECHERCHE D'UN AUTEUR (quand on tape dans la barre de recherche)
 
     const statsAuteursRecherche = document.querySelectorAll(".resultats_bas");
 
     statsAuteursRecherche.forEach((div) => {
       // Supprimer "3 livres" et "9 lecteurs"
-      div.innerHTML = div.innerHTML.replace(/\d+(?=\s*(livres|lecteurs))/g, '').trim();
+      div.innerHTML = div.innerHTML.replace(/\d+(?=\s*(livres|lecteurs|participants))/g, '').trim(); // Supprimer les chiffres avant les mots "livres", "lecteurs" et "participants"
       div.innerHTML = div.innerHTML.replace("livres", 'Livres').trim();
-      div.innerHTML = div.innerHTML.replace("lecteurs", 'Lecteurs').trim();
+      div.innerHTML = div.innerHTML.replace("lecteurs", '').trim();
+      div.innerHTML = div.innerHTML.replace("participants", '').trim();
+
     });
     
     

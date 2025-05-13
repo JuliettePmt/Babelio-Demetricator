@@ -22,6 +22,18 @@ export function userMetrics() {
       lien.textContent = "Abonnements"
     }
   });
+
+
+  // Menu déroulant de "Mes Livres"
+  const selectElements = document.querySelectorAll("select");
+
+  selectElements.forEach(selectElement => { 
+    const options = selectElement.querySelectorAll("option"); 
+  
+    options.forEach(option => {
+      option.textContent = option.textContent.replace(/\s*\(\d+\)/g, '').trim();
+    });
+  });
   
 
 
