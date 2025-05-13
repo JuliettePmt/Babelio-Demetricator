@@ -179,9 +179,8 @@ export function userMetrics() {
 
   if (allDivTitres) {
     const observer = new MutationObserver(() => {
-      const ileDeserteDiv = Array.from(allDivTitres).find((div) =>
-        div.textContent.includes("déserte")
-      );
+      const ileDeserteDiv = Array.from(allDivTitres).find((div) => div.textContent.includes("déserte"));
+      const enTrainDeLire = Array.from(allDivTitres).find((div) => div.textContent.includes("En train"));
 
       if (ileDeserteDiv) {
         ileDeserteDiv.childNodes.forEach((node) => {
@@ -192,7 +191,17 @@ export function userMetrics() {
             node.textContent = node.textContent.replace(/\s*\(\d+\)/g, "");
           }
         });
-      observer.disconnect();
+      }
+
+      if (enTrainDeLire) {
+        enTrainDeLire.childNodes.forEach((node) => {
+          if (
+            node.nodeType === Node.TEXT_NODE &&
+            /\(\d+\)/.test(node.textContent)
+          ) {
+            node.textContent = node.textContent.replace(/\s*\(\d+\)/g, "");
+          }
+        });
       }
     });
 
