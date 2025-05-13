@@ -1,6 +1,7 @@
 import { ratings } from "./scripts/book_pages/ratings.js";
 import { community } from "./scripts/book_pages/community.js";
 import { platformMetrics } from "./scripts/book_pages/platformMetrics.js";
+import { authorMetrics } from "./scripts/book_pages/authorMetrics.js";
 import { commercial } from "./scripts/book_pages/commercial.js";
 import { userMetrics } from "./scripts/user_profile/userMetrics.js";
 import { sideMetrics } from "./scripts/user_profile/sideMetrics.js";
@@ -10,6 +11,7 @@ import { sideMetrics } from "./scripts/user_profile/sideMetrics.js";
 ratings();
 community();
 platformMetrics();
+authorMetrics();
 commercial();
 
 // USER PROFILE
