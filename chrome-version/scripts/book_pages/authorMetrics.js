@@ -65,5 +65,22 @@ export function authorMetrics() {
         });
     }  
     
+    // PAGE DE RECHERCHE D'UN AUTEUR
+
+    const statsAuteursRecherche = document.querySelectorAll(".resultats_bas");
+
+    statsAuteursRecherche.forEach((div) => {
+      // Supprimer "3 livres" et "9 lecteurs"
+      div.innerHTML = div.innerHTML.replace(/\d+(?=\s*(livres|lecteurs))/g, '').trim();
+      div.innerHTML = div.innerHTML.replace("livres", 'Livres').trim();
+      div.innerHTML = div.innerHTML.replace("lecteurs", 'Lecteurs').trim();
+    });
+    
+    
+
+    // Nombre de livres
+
+    // Nombre de lecteurs
+
 
 }
