@@ -78,7 +78,6 @@ export function authorMetrics() {
 
     });
     
-    
 
     // Nombre de livres
 

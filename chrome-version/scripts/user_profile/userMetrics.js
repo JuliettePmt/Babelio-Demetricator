@@ -11,6 +11,16 @@ export function userMetrics() {
     }
   }
 
+  // Menu déroulant (sous l'icône de profil en haut à droite) : supprimer l'accès à la page statistiques
+  const menuDeroulant = document.getElementById("menu_user_under");  // Sélectionner le conteneur du menu
+
+  const statistiquesMenuDeroulant = Array.from(menuDeroulant.querySelectorAll("a")).find(link => link.textContent === "Statistiques");
+
+  if (statistiquesMenuDeroulant) {
+    statistiquesMenuDeroulant.remove();  // Supprimer l'élément <a> avec le texte "Statistiques"
+  }
+
+
   // Nombre d'abonnés / abonnements (milieu de page, sous le pseudo)
   const liensNoirs = document.getElementsByClassName("tiny_links dark");
 
