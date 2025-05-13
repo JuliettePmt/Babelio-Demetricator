@@ -16,10 +16,25 @@ export function platformMetrics() {
         
     }
 
+    // Etoiles dans le texte (exemple : "4.53★ (2998)"")
+    const etoileDivs = document.querySelectorAll(".titre_livre_elements");
+
+    etoileDivs.forEach(ratingDiv => {
+        // Find the text node that contains the rating
+        const ratingText = Array.from(ratingDiv.childNodes).find(node => node.nodeType === Node.TEXT_NODE && node.textContent.includes("★"));
+        
+        if (ratingText) {
+            ratingText.remove();
+        }
+    });
+
+
+
+    
+
 
     // Nombre de livres lus (displayed in the banner of the user profile) : "Livres (XXX)"
-    const nbBooksRead = Array.from(document.querySelectorAll("#page_corps > div > div.livre_header.row > div > div"))
-    .find(a => a.textContent.includes("Livres"));
+    const nbBooksRead = Array.from(document.querySelectorAll("#page_corps > div > div.livre_header.row > div > div")).find(a => a.textContent.includes("Livres"));
 
     if (nbBooksRead) {
         Array.from(nbBooksRead.childNodes).forEach(node => {
