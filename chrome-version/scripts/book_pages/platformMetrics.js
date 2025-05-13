@@ -72,6 +72,7 @@ export function platformMetrics() {
     };
 
 
+
     // >> Execution <<
         numberOfElementsArray.forEach(element => {
             element.childNodes.forEach(node => { // Use childNodes to prevent the suppression of all CSS style
