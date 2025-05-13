@@ -174,35 +174,31 @@ export function userMetrics() {
     });
   }
 
-  // Nombre de livres pour une île déserte
+  // Nombre de livres "en train de lire" et "pour une île déserte"
   const allDivTitres = document.getElementsByClassName("titre");
 
   if (allDivTitres) {
     const observer = new MutationObserver(() => {
-      const ileDeserteDiv = Array.from(allDivTitres).find((div) => div.textContent.includes("déserte"));
+      const ileDeserteDiv = Array.from(allDivTitres).find((div) => div.textContent.includes("déserte")); 
       const enTrainDeLire = Array.from(allDivTitres).find((div) => div.textContent.includes("En train"));
+      const groupeNb = Array.from(allDivTitres).find((div) => div.textContent.includes("Groupes"));
 
-      if (ileDeserteDiv) {
-        ileDeserteDiv.childNodes.forEach((node) => {
-          if (
-            node.nodeType === Node.TEXT_NODE &&
-            /\(\d+\)/.test(node.textContent)
-          ) {
-            node.textContent = node.textContent.replace(/\s*\(\d+\)/g, "");
-          }
-        });
+      function supprimerParentheses(array) {
+        if (array) {
+          array.childNodes.forEach((node) => {
+            if (
+              node.nodeType === Node.TEXT_NODE &&
+              /\(\d+\)/.test(node.textContent)
+            ) {
+              node.textContent = node.textContent.replace(/\s*\(\d+\)/g, "");
+            }
+          });
+        }
       }
+      supprimerParentheses(ileDeserteDiv)
+      supprimerParentheses(enTrainDeLire)
+      supprimerParentheses(groupeNb)
 
-      if (enTrainDeLire) {
-        enTrainDeLire.childNodes.forEach((node) => {
-          if (
-            node.nodeType === Node.TEXT_NODE &&
-            /\(\d+\)/.test(node.textContent)
-          ) {
-            node.textContent = node.textContent.replace(/\s*\(\d+\)/g, "");
-          }
-        });
-      }
     });
 
     // N'oublie pas d'appeler observe() sur un nœud cible :
