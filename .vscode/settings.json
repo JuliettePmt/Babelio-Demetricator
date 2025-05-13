@@ -1,0 +1,12 @@
+{"editor.bracketPairColorization.enabled": true,
+"editor.guides.bracketPairs": "active", // optional: shows vertical guides
+"workbench.colorCustomizations": {
+  "editorBracketHighlight.foreground1": "#ff0011",
+  "editorBracketHighlight.foreground2": "#00eeff",
+  "editorBracketHighlight.foreground3": "#c2c800",
+  "editorBracketHighlight.foreground4": "#f700ff",
+  "editorBracketHighlight.foreground5": "#7FFF00",
+  "editorBracketHighlight.foreground6": "#006117"
+}
+
+}

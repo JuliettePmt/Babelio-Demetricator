@@ -15,13 +15,13 @@ def createFirefoxVersion():
     createFolder(current_path, folder_path_firefox, folder_name_firefox)
     copyFiles(current_path, folder_path_firefox, folder_name_firefox,
               chrome_directory)  # Copy new files in firefox directory
-    replaceJSFiles(folder_name_firefox, "chrome.",
-                   "browser.")  # Replace content
+    replaceJSFiles(folder_name_firefox, "chrome.", "browser.")
+
     # Copy manifest from the firefox-version directory and update version
     copyManifest(manifest_directory, folder_path_firefox,
                  current_path, chrome_directory)
     executeWebpack()
-    zipFile(folder_path_firefox, folder_name_firefox)
+    # zipFile(folder_path_firefox, folder_name_firefox)
 
 
 def createFolder(current_path, folder_path_firefox, folder_name_firefox):
@@ -68,7 +68,8 @@ def copyManifest(manifest_directory, folder_path_firefox, current_path, chrome_d
     reference_file = os.path.join(chrome_directory, "manifest.json")
 
     if not os.path.exists(source_file):
-        print(f"Le fichier 'manifest.json' n'existe pas dans {manifest_directory}.")
+        print(
+            f"Le fichier 'manifest.json' n'existe pas dans {manifest_directory}.")
         return
     if not os.path.exists(reference_file):
         print(f"Le fichier 'manifest.json' n'existe pas dans {current_path}.")
@@ -99,11 +100,11 @@ def executeWebpack():
 
     try:
         os.chdir(webpack_file)
-        result = subprocess.run(commande, capture_output=True, text=True, check=True)
+        result = subprocess.run(
+            commande, capture_output=True, text=True, check=True)
         print("Webpack ok")
     except Exception as e:
         print(f"Erreur inattendue : {e}")
-
 
 
 def zipFile(firefox_folder, firefox_version_folder):
@@ -112,7 +113,7 @@ def zipFile(firefox_folder, firefox_version_folder):
     # Delete old version
     if os.path.exists(zip_path):
         os.remove(zip_path)
-        
+
     with ZipFile(zip_path, 'w') as zipf:
         for root, dirs, files in os.walk(firefox_folder):
             for file in files:
@@ -122,6 +123,7 @@ def zipFile(firefox_folder, firefox_version_folder):
                 zipf.write(file_path, arcname)
 
     print(f"Created ZIP file.")
+
 
 
 createFirefoxVersion()

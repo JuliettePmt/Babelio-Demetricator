@@ -10,5 +10,7 @@ The script will take all files from the Chrome version, except for :
 
 ---------
 Run local test version :
-- Execute ```npx webpack``` in the **'_firefox-version/firefox-plugin_' folder**
-- Execute ```web-ext build``` also in the '_firefox-version/firefox-plugin_' folder !
+- Execute ```npx webpack``` in the **'_firefox-version/firefox-plugin_' directory**
+- Execute ```web-ext build``` also in the '_firefox-version/firefox-plugin_' directory
+
+The zip file is in the '_firefox-version/firefox-plugin_' directory.
