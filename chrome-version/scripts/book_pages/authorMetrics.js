@@ -17,9 +17,9 @@ export function authorMetrics() {
     // "Bibliographie de [Virginie Despentes] (XX)"
     
     const allDivTitres = document.getElementsByClassName("titre");
-
     if (allDivTitres) {
       const observer = new MutationObserver(() => {
+
         const bibliographieDe = Array.from(allDivTitres).find((div) => div.textContent.includes("Bibliographie de")); 
         const nbVideosInterviews = Array.from(allDivTitres).find((div) => div.textContent.includes("Videos et interviews"));
         const nbPodcasts = Array.from(allDivTitres).find((div) => div.textContent.includes("Podcasts"));
@@ -40,23 +40,30 @@ export function authorMetrics() {
         supprimerParentheses(nbVideosInterviews)
         supprimerParentheses(nbPodcasts)
 
+
+        // Onglets Citations / Vidéos
         Array.from(allDivTitres).forEach((titre) => {
-            if (titre.textContent.includes("Citations de")) {
-              const span = titre.querySelector("span");
+            if (titre.textContent.includes("Citations de") || titre.textContent.includes("Vidéos de")) {
+            const span = titre.querySelector("span");
               if (span) {
                 span.remove();  // Supprimer le <span> contenant "(3600)"
               }
             }
           });
-          
         
       }); // Clôture observation
   
       observer.observe(document.body, { childList: true, subtree: true });
     }
 
-
-    
+    // Voir plus (XX)
+    const voirPlus = document.getElementsByClassName("more");
+    if (voirPlus) {
+        const nbVoirPlus = Array.from(voirPlus);
+        nbVoirPlus.forEach((element) => {
+            element.textContent = element.textContent.replace(/\s*\(\d+\)/g, "");
+        });
+    }  
     
 
 }
