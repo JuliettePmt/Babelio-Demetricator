@@ -1,6 +1,28 @@
 export function sideMetrics() {
   console.log("sideMetrics OK")
 
+  // Insignes et contributions (sur la page Accueil du profil)
+  const insigneBanner = document.querySelector("#page_corps > div > div.side_r > div > div:nth-child(7)");
+  const sidePanel = document.querySelector("div.side_r_content");
+
+  if (insigneBanner && insigneBanner.textContent.includes("insignes")) {
+    insigneBanner.remove();
+
+    const allSeparators = sidePanel.querySelectorAll("div.sep");
+    if (allSeparators.length > 1) {
+      allSeparators[1].remove(); // Supprimer le second élément (index 1)
+    }
+  }
+
+  //   // Insignes et contributions (sur le reste du site)
+  if (sidePanel) {
+    sidePanel.remove();
+  } else {
+    const allSeparators = document.querySelectorAll("div.sep");
+    if (allSeparators.length > 1) {
+      allSeparators[1].remove();
+    }
+  }
 
   // Nb d'abonnés et d'abonnements (page d'accueil du profil)
   const observer = new MutationObserver(() => {

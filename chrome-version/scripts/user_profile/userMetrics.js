@@ -11,33 +11,22 @@ export function userMetrics() {
     }
   }
 
-  // Insignes et contributions (sur la page Accueil du profil)
-  const insigneBanner = document.querySelector("#page_corps > div > div.side_r > div > div:nth-child(7)");
-  const sidePanel = document.querySelector("div.side_r_content");
+  // Nombre d'abonnés / abonnements (milieu de page, sous le pseudo)
+  const liensNoirs = document.getElementsByClassName("tiny_links dark");
 
-  if (insigneBanner && insigneBanner.textContent.includes("insignes")) {
-    insigneBanner.remove();
-
-    const allSeparators = sidePanel.querySelectorAll("div.sep");
-    if (allSeparators.length > 1) {
-      allSeparators[1].remove(); // Supprimer le second élément (index 1)
+  Array.from(liensNoirs).forEach((lien) => { // Convertir en Array pour utiliser forEach
+    if (lien.textContent.includes("abonnés")) {
+      lien.textContent = "Abonnés"
     }
-  }
-
-  //   // Insignes et contributions (sur le reste du site)
-  if (sidePanel) {
-    sidePanel.remove();
-  } else {
-    const allSeparators = document.querySelectorAll("div.sep");
-    if (allSeparators.length > 1) {
-      allSeparators[1].remove();
+    else if (lien.textContent.includes("abonnements")) {
+      lien.textContent = "Abonnements"
     }
-  }
+  });
+  
+
 
   //   Number of books by category on profile (example : "Littérature italienne")
-  const booksByCategories = document.querySelectorAll(
-    "#page_corps > div > div.side_l > div > div.liste_fiches > div"
-  );
+  const booksByCategories = document.querySelectorAll("#page_corps > div > div.side_l > div > div.liste_fiches > div");
 
   if (booksByCategories) {
     const nbBooksByCategory = document.querySelectorAll("a > div > p");
@@ -119,7 +108,6 @@ export function userMetrics() {
 
     });
 
-    // N'oublie pas d'appeler observe() sur un nœud cible :
     observer.observe(document.body, { childList: true, subtree: true });
   }
 }
