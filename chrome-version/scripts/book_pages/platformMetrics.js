@@ -17,7 +17,7 @@ export function platformMetrics() {
     }
 
 
-    // Nb of books read (displayed in the banner of the user profile) : "Livres (XXX)"
+    // Nombre de livres lus (displayed in the banner of the user profile) : "Livres (XXX)"
     const nbBooksRead = Array.from(document.querySelectorAll("#page_corps > div > div.livre_header.row > div > div"))
     .find(a => a.textContent.includes("Livres"));
 
