@@ -111,6 +111,10 @@ export function userMetrics() {
       const ileDeserteDiv = Array.from(allDivTitres).find((div) => div.textContent.includes("déserte")); 
       const enTrainDeLire = Array.from(allDivTitres).find((div) => div.textContent.includes("En train"));
       const groupeNb = Array.from(allDivTitres).find((div) => div.textContent.includes("Groupes"));
+      const messagesNb = Array.from(allDivTitres).find((div) => div.textContent.includes("Mes Messages"));
+      const discussionNb = Array.from(allDivTitres).find((div) => div.textContent.includes("Discussion avec"));
+
+
 
       function supprimerParentheses(array) {
         if (array) {
@@ -127,6 +131,30 @@ export function userMetrics() {
       supprimerParentheses(ileDeserteDiv)
       supprimerParentheses(enTrainDeLire)
       supprimerParentheses(groupeNb)
+      supprimerParentheses(messagesNb)
+      supprimerParentheses(discussionNb)
+
+    // Supprimer le nombre de messages envoyés dans une conversation
+
+    var whatToFind = {
+      property: "float",
+      values: ["right"]
+    };
+    
+    var walker = document.createTreeWalker(
+      document.documentElement,
+      NodeFilter.SHOW_ELEMENT,
+      el => {
+        const style = getComputedStyle(el)[whatToFind.property];
+        return whatToFind.values.includes(style)
+          ? NodeFilter.FILTER_ACCEPT
+          : NodeFilter.FILTER_SKIP;
+      }
+    );
+    
+    while (walker.nextNode()) {
+      walker.currentNode.remove(); 
+    }
 
     });
 
