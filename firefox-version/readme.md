@@ -1,8 +1,8 @@
 
 ### How to create Firefox version :
 
-1. Execute ```npm run build``` in the root folder (conditions of execution in the root 'package.json' file). 
-   
+- Execute ```npm run build``` in the root folder (conditions of execution in the root 'package.json' file). 
+- The zip file is in the '_firefox-version/firefox-plugin/web-ext-artifacts_' directory.
 
 ---------
 The script will take all files from the Chrome version, except for :
@@ -12,5 +12,3 @@ The script will take all files from the Chrome version, except for :
 Run local test version :
 - Execute ```npx webpack``` in the **'_firefox-version/firefox-plugin_' directory**
 - Execute ```web-ext build``` also in the '_firefox-version/firefox-plugin_' directory
-
-The zip file is in the '_firefox-version/firefox-plugin/web-ext-artifacts_' directory.
