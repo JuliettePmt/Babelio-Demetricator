@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "python3 ./createFirefoxVersion.py && cd chrome-version && npx webpack"
+    "build": "(cd chrome-version && npx webpack) && (python3 createFirefoxVersion.py && cd firefox-version/firefox-plugin && npx webpack && web-ext build --overwrite-dest)"
   },
   "keywords": [],
   "author": "",

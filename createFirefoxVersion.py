@@ -16,6 +16,7 @@ def createFirefoxVersion():
     copyFiles(current_path, folder_path_firefox, folder_name_firefox,
               chrome_directory)  # Copy new files in firefox directory
     replaceJSFiles(folder_name_firefox, "chrome.", "browser.")
+    replaceJSFiles(folder_name_firefox, "91.0", "109.0")
 
     # Copy manifest from the firefox-version directory and update version
     copyManifest(manifest_directory, folder_path_firefox,
@@ -85,7 +86,16 @@ def copyManifest(manifest_directory, folder_path_firefox, current_path, chrome_d
     with open(source_file, "r", encoding="utf-8") as f:
         manifest_data = json.load(f)
         manifest_data["version"] = reference_version
+        manifest_data["manifest_version"] = 2
 
+        # Only add "applications" if using Manifest V2
+        if manifest_data.get("manifest_version") == 2:
+            manifest_data["applications"] = {
+                "gecko": {
+                    "id": "{60039cbc-b65e-4b32-bede-27223614a338}",
+                    "strict_min_version": "91.0"
+                }
+            }
     os.makedirs(folder_path_firefox, exist_ok=True)
 
     with open(destination_file, "w", encoding="utf-8") as f:
