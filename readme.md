@@ -8,7 +8,7 @@ This experiment was inspired by [Ben Grosser](https://bengrosser.com/) and his [
 
 **Chrome extension** [available here](https://chromewebstore.google.com/detail/babelio-Anti-Quanti/naflkjcclkkaallpfpkokchcgjclifag?hl=fr&pli=1)
 
-**Firefox extension** (currently in development) [available here](https://addons.mozilla.org/fr/firefox/addon/babelio-Anti-Quanti/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)
+**Firefox extension** [available here](https://addons.mozilla.org/fr/firefox/addon/babelio-Anti-Quanti/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)
 
 
 ---------

@@ -16,11 +16,10 @@ export function platformMetrics() {
         
     }
 
-    // Etoiles dans le texte (exemple : "4.53★ (2998)"")
+    // Étoiles dans le texte (exemple : "4.53★ (2998)"")
     const etoileDivs = document.querySelectorAll(".titre_livre_elements");
 
     etoileDivs.forEach(ratingDiv => {
-        // Find the text node that contains the rating
         const ratingText = Array.from(ratingDiv.childNodes).find(node => node.nodeType === Node.TEXT_NODE && node.textContent.includes("★"));
         
         if (ratingText) {
@@ -30,7 +29,10 @@ export function platformMetrics() {
 
 
 
-    
+        
+        
+
+
 
 
     // Nombre de livres lus (displayed in the banner of the user profile) : "Livres (XXX)"
@@ -41,6 +43,8 @@ export function platformMetrics() {
                 node.textContent = node.textContent.replace(/\(\d+\)/g, '');
         });
     }
+
+    // Notes dans les recommandations quotidiennes
 
 
     // "Critiques, Analyses et Avis (XXX)"
@@ -82,7 +86,6 @@ export function platformMetrics() {
     if (bookCitations) {
         bookCitations.forEach(bookCitation => {
             bookCitation.style.display = "none";
-            bookCitation.classList.add("processed-by-script");
         });
     };
 
