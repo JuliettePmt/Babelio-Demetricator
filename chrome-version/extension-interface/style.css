@@ -1,7 +1,14 @@
 * {
-    font-style: roboto;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2em;
 }
 
 h1 {
-    font-size: 10px;
+    font-size: 1.4em;
 }
+
+.explanation {
+    width: 250px !important;
+    padding: 10px;
+}
+
